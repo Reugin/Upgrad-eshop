@@ -16,8 +16,8 @@ class Loginpage extends Component {
         //     }
 
         return (
-            <div className="login-modal">
-                <div className="login-box-background">
+            <div className="modal-container">
+                <div className="modal-background">
                     <h1 className="login-header">Welcome in<br></br> upGrad Eshop</h1>
                     <div className='login-box'>
 

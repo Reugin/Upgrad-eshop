@@ -36,13 +36,13 @@ body {
 .login-header {
     text-align: center;
     color: white;
+    margin: 0.5em;
     }
 
 .login-input-text {
     font-size: 0.9em;
     font-weight: 400;
     width: 70%;
-    opacity: .8;
 
 }
 
@@ -54,7 +54,7 @@ body {
     align-items: center;
     border-radius: 2px;
     background: white;
-    width: 76%;
+    width: 77%;
 }
 
 .eye-logo {
@@ -64,23 +64,27 @@ body {
 
 .password {
     width: 100%;
-    padding: 0.8em;
+    padding: 0.7em;
     outline: none;
-    border: 1px solid transparent;
+  border: none;
+}
+
+.input-box:hover, .input-box:focus{
+    scale: 1.02;
+    box-shadow: 0 0 15px .5px rgba(0, 0, 0,.7);
 }
 
 .email {
     outline: none;
-    border: 1px solid rgba(0, 0, 0, 0.6);
+    border: none;
     border-radius: 2px;
-    padding: 0.8em;
+    padding: 0.7em;
+}
+.email:hover, .email:focus{
+    scale: 1.02;
+    box-shadow: 0 0 15px .5px rgba(0, 0, 0,.7);
 }
 
-.pass-box img {
-    margin: 8px;
-    cursor: pointer;
-    opacity: 0.8;
-}
 
 .forgot-password {
     margin: 0.3em;
@@ -88,29 +92,35 @@ body {
     color: white;
 }
 
-.forgot-password:hover {
-    font-size: 17px;
-    transition: 0.2s ease;
-}
-
-.sign-up {
+.sign-up-link {
     color: white;
-    margin: 1em;
-
+    font-weight: bold;
 }
 
-#continue {
-    font-size: medium;
+.sign-up-link:hover {
+  font-size: large;
+    font-weight: bold;
+}
+
+.continue-btn {
+    font-size:medium;
     margin: 0.8em;
-    padding: 0.8em;
-    background: rgb(60, 69, 225);
-    color: white;
+    padding: 0.6em;
+    background: rgb(255, 255, 255);
+    color: rgb(71, 71, 71);
     border: none;
-    border-radius: 3px;
-    font-weight: 500;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 80%;
+}
+
+.continue-btn:hover{
+    scale: 1.02;
+    box-shadow: 0 0 15px .5px rgba(0, 0, 0,.7);
 }
 
 
-.create-account {
-    padding-block: 1em;
+.create-new-account-box{
+    margin-top: 8em;
+    text-align: center;
 }

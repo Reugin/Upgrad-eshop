@@ -1,0 +1,25 @@
+
+.forgot-password {
+    margin: 0.4em;
+    text-decoration: none;
+    color: white;
+    font-size: smaller;
+}
+
+.forgot-password:hover{
+font-weight: bold;
+}
+.sign-up-link {
+    color: white;
+
+}
+
+.sign-up-link:hover {
+    font-weight: bold;
+}
+
+
+.create-new-account-box {
+    margin-top: 7em;
+    text-align: center;
+}

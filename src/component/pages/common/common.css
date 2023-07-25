@@ -15,7 +15,7 @@ body {
 }
 
 .modal-background{
-    background-image: url('./icons/upgradeLoginLogo.png');
+    background-image: url('../../assets/icons/upgradeLoginLogo.png');
     background-position: center;
     background-repeat: no-repeat;
     display: flex;

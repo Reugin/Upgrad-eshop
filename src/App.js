@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignIn from "./component/pages/signIn/SignIn";
 import SignUp from "./component/pages/signup/SignUp";
 import MenuAppBar from './component/pages/menuBar/MenuAppBar';
+import ProductControlCard from './component/pages/productPage/ProductControlCard';
+import ProductCategory from './component/pages/productCategory/productCategory';
 
 function App() {
     return (
-
         <Router>
             <Routes>
                 <Route path="/" element={<SignIn />} />

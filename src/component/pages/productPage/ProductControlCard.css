@@ -1,0 +1,28 @@
+.main-container{
+    background-color:#e6e6e6 ;
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    color: #b0b0b0;
+}
+.product-card-container {
+ margin: 1em;
+
+}
+
+.product-card-media{
+    border: 1px solid black;
+    border-radius:4px ;
+    height: 200px;
+}
+
+.product-card:hover {
+scale: 1.02;
+transition: .2s ease;
+box-shadow: 0 0 10px 1px gray;
+}
+
+.product-name{
+    padding-block: 10px;
+    font-weight: bolder;
+}

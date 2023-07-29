@@ -1,5 +1,5 @@
 import React from 'react';
-import '../productPage/ProductControlCard.css'
+import '../productPage/ProductCard.css'
 // import '../../assets/icons/productImages/shoesImg.jpg'
 import { Card, CardContent, CardMedia, Typography, Container, Grid, Button, CardActions, CardActionArea, createTheme, ThemeProvider } from '@mui/material';
 

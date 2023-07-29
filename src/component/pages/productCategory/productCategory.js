@@ -6,8 +6,6 @@ import React from 'react';
 
 
 function ProductCategory() {
-
-
     const theme = createTheme({
         palette: {
             primary: {

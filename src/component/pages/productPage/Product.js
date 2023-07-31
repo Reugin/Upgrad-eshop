@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Grid, ToggleButton, ToggleButtonGroup, createTheme, ThemeProvider } from '@mui/material';
-import ProductCard from './ProductCard';
 import { CallBackendAPI } from "../../library/app";
+import ProductCard from "./ProductCard";
 
 const theme = createTheme({
     palette: {

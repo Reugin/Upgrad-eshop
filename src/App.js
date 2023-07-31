@@ -7,6 +7,8 @@ import MenuAppBar from './component/pages/menuBar/MenuAppBar';
 import ProductControlCard from './component/pages/productPage/ProductCard';
 import ProductCategory from "./component/pages/productCategory/productCategory";
 import Landing from "./component/pages/landing/Landing";
+import ProductDetails from "./component/pages/productPage/ProductDetails";
+import CreateOrder from "./component/pages/productPage/CreateOrder";
 
 function App() {
     return (
@@ -16,6 +18,8 @@ function App() {
                 <Route path="/signIn" element={<SignIn />} />
                 <Route path="/signUp" element={<SignUp />} />
                 <Route path="/products" element={<Landing/>}/>
+                <Route path="/products/:productId" element={<ProductDetails/>}/>
+                <Route path="/create-order" element={<CreateOrder/>}/>
                 {/* Add more routes here if needed */}
             </Routes>
         </Router>

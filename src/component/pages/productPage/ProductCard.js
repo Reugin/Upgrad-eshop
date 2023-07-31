@@ -1,7 +1,16 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, CardActions, CardActionArea, Button } from '@mui/material';
 
+import { useNavigate } from "react-router-dom";
+
 const ProductCard = ({ product }) => {
+    const navigate = useNavigate();
+
+    const handleAddToCart = () => {
+
+        navigate(`/products/${product._id}`);
+    };
+
     return (
         <Card className='product-card'>
             <CardContent>
@@ -17,7 +26,7 @@ const ProductCard = ({ product }) => {
                 </Typography>
                 <Typography>Available Items: {product.availableItems}</Typography>
                 <CardActions sx={{ display: 'block' }}>
-                    <Button color='secondary' style={{ border: '1px solid #ff5722' }}>Add to Cart</Button>
+                    <Button color='secondary' style={{ border: '1px solid #ff5722' }} onClick={handleAddToCart}>Buy Now</Button>
                 </CardActions>
             </CardContent>
         </Card>

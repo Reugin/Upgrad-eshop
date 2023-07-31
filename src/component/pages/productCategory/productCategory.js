@@ -1,11 +1,9 @@
+import React from 'react';
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { red } from '@mui/material/colors';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import React from 'react';
 
-
-
-function ProductCategory() {
+function ProductCategory({ callback }) {
     const theme = createTheme({
         palette: {
             primary: {
@@ -20,28 +18,28 @@ function ProductCategory() {
         },
     });
 
-
-    const [alignment, setAlignment] = React.useState('web');
+    const [alignment, setAlignment] = React.useState('Default');
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
+        // Call the callback function with the selected category
+        // callback(newAlignment);
     };
 
     return (
         <ThemeProvider theme={theme}>
             <ToggleButtonGroup
                 color="primary"
-                 
                 value={alignment}
                 exclusive
                 onChange={handleChange}
                 aria-label="Platform"
-                style={{ 
-                    display: 'flex', 
-                    justifyContent: 'center', 
-                    padding: 10, 
-                    backgroundColor:'#e6e6e6' ,
-                    borderBottom:"1px solid #b0b0b0"
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    padding: 10,
+                    backgroundColor: '#e6e6e6',
+                    borderBottom: "1px solid #b0b0b0"
                 }}
             >
                 <ToggleButton value="Default">Default</ToggleButton>
@@ -50,8 +48,7 @@ function ProductCategory() {
                 <ToggleButton value="Newest">Newest</ToggleButton>
             </ToggleButtonGroup>
         </ThemeProvider>
-
     );
-
 }
+
 export default ProductCategory;

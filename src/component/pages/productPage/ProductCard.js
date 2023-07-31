@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, CardActions, CardActionArea, Button } from '@mui/material';
-
+import '../productPage/ProductCard.css';
 import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
@@ -19,14 +19,15 @@ const ProductCard = ({ product }) => {
                         className="product-card-media"
                         component='img'
                         image={product.imageURL}
+                        style={{}}
                     />
                 </CardActionArea>
-                <Typography variant="h5" style={{ paddingBlock: 10, fontWeight: 600, display: 'flex' }}>
-                    Product Name: {product.name}
+                <Typography variant="h6" style={{ paddingBlock: 10, fontWeight: 600, display: 'flex' }}>
+                    Product Name:<br></br> {product.name}
                 </Typography>
                 <Typography>Available Items: {product.availableItems}</Typography>
                 <CardActions sx={{ display: 'block' }}>
-                    <Button color='secondary' style={{ border: '1px solid #ff5722' }} onClick={handleAddToCart}>Buy Now</Button>
+                    <Button fullWidth color='secondary' style={{ border: '1px solid #ff5722' }} onClick={handleAddToCart}>Buy Now</Button>
                 </CardActions>
             </CardContent>
         </Card>

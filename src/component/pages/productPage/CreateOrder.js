@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Stepper, Step, StepLabel, Button, Typography, createTheme, ThemeProvider, Container, Grid, TextField } from '@mui/material';
 import { CallBackendAPI } from '../../library/app';
-import { Label } from '@mui/icons-material';
 
 // import './CreateOrder.css'; // Import the CSS file for styling
 
@@ -99,6 +98,7 @@ const CreateOrder = () => {
                                         label="Full Name"
                                         variant="outlined"
                                         fullWidth
+                                        size='small'
                                         value={address?.fullName}
                                         disabled
                                     />
@@ -107,6 +107,7 @@ const CreateOrder = () => {
                                     <TextField
                                         label="Phone Number"
                                         variant="outlined"
+                                        size='small'
                                         fullWidth
                                         value={address?.phoneNumber}
                                         disabled
@@ -116,6 +117,7 @@ const CreateOrder = () => {
                                     <TextField
                                         fullWidth
                                         label='Flat, House no., Building, Company, Apartment'
+                                        type='text'
                                         size='small'>
                                     </TextField>
                                 </Grid>
@@ -123,6 +125,7 @@ const CreateOrder = () => {
                                     <TextField
                                         fullWidth
                                         label='Area, Street, Sector, Village'
+                                        type='text'
                                         size='small'>
                                     </TextField>
                                 </Grid>
@@ -130,6 +133,7 @@ const CreateOrder = () => {
                                     <TextField
                                         fullWidth
                                         label='Landmark'
+                                        type='text'
                                         size='small'>
                                     </TextField>
                                 </Grid>
@@ -138,6 +142,7 @@ const CreateOrder = () => {
                                     <TextField
                                         fullWidth
                                         label='Pincode'
+                                        type='text'
                                         size='small'>
                                     </TextField>
                                 </Grid>

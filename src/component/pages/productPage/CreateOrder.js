@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import {useHistory, useLocation} from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { Stepper, Step, StepLabel, Button, Typography, createTheme, ThemeProvider, Container, Grid, TextField } from '@mui/material';
 import { CallBackendAPI } from '../../library/app';
+import { Label } from '@mui/icons-material';
+
 // import './CreateOrder.css'; // Import the CSS file for styling
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#fff"
+            main: "#000"
         },
         secondary: {
             main: "#ff5722"
@@ -61,17 +63,17 @@ const CreateOrder = () => {
     return (
         <ThemeProvider theme={theme}>
             <Container maxWidth="md" className="main-container">
-                <Stepper activeStep={activeStep}>
+                <Stepper color="secondary" activeStep={activeStep}>
                     {steps.map((label) => (
-                        <Step key={label}>
-                            <StepLabel>{label}</StepLabel>
+                        <Step color="secondary" key={label}>
+                            <StepLabel color="secondary">{label}</StepLabel>
                         </Step>
                     ))}
                 </Stepper>
                 <div>
                     {activeStep === 0 && (
                         <Container>
-                            <Grid container spacing={2}>
+                            <Grid container spacing={2} rowSpacing={2} >
                                 <Grid item xs={12}>
                                     <Typography variant="h5" gutterBottom className="order-summary-heading">
                                         Order Summary
@@ -86,11 +88,12 @@ const CreateOrder = () => {
                                     </Typography>
                                     {/* Include other product and order details here */}
                                 </Grid>
-                                <Grid item xs={12}>
+                                <Grid item xs={12} >
                                     <Typography variant="h5" gutterBottom className="address-heading">
                                         Shipping Address
                                     </Typography>
                                 </Grid>
+
                                 <Grid item xs={12} sm={6}>
                                     <TextField
                                         label="Full Name"
@@ -109,14 +112,56 @@ const CreateOrder = () => {
                                         disabled
                                     />
                                 </Grid>
-                                {/* Include other address fields here */}
                                 <Grid item xs={12}>
-                                    <Button color="secondary" onClick={handleConfirmOrder} className="confirm-order-button">
-                                        Confirm Order
-                                    </Button>
-                                    <Button onClick={handlePreviousStep} className="previous-step-button">
+                                    <TextField
+                                        fullWidth
+                                        label='Flat, House no., Building, Company, Apartment'
+                                        size='small'>
+                                    </TextField>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        fullWidth
+                                        label='Area, Street, Sector, Village'
+                                        size='small'>
+                                    </TextField>
+                                </Grid>
+                                <Grid item sx={12} sm={6}>
+                                    <TextField
+                                        fullWidth
+                                        label='Landmark'
+                                        size='small'>
+                                    </TextField>
+                                </Grid>
+
+                                <Grid item sx={12} sm={6}>
+                                    <TextField
+                                        fullWidth
+                                        label='Pincode'
+                                        size='small'>
+                                    </TextField>
+                                </Grid>
+
+                                <Grid item xs={12} sx={{display:'flex' ,justifyContent:'space-between', marginBlock:'10px',}}>
+                                <Button 
+                                    onClick={handlePreviousStep} 
+                                    className="previous-step-button"
+                                    sx={{
+                                        border:'1px solid black'
+                                    }}>
                                         Back
                                     </Button>
+                                    
+                                    <Button
+                                        color="secondary"
+                                        onClick={handleConfirmOrder}
+                                        className="confirm-order-button"
+                                        sx={{
+                                            border: '1px solid #ff5722',
+                                        }}>
+                                        Confirm Order
+                                    </Button>
+                                    
                                 </Grid>
                             </Grid>
                         </Container>

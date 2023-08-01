@@ -28,6 +28,7 @@ function ProductCategory({ callback }) {
 
     return (
         <ThemeProvider theme={theme}>
+            
             <ToggleButtonGroup
                 color="primary"
                 value={alignment}

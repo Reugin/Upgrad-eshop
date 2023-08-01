@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignIn from "./component/pages/signIn/SignIn";
 import SignUp from "./component/pages/signup/SignUp";
 import MenuAppBar from './component/pages/menuBar/MenuAppBar';
+import Navbar from './component/pages/menuBar/Navbar';
 import ProductControlCard from './component/pages/productPage/ProductCard';
 import ProductCategory from "./component/pages/productCategory/productCategory";
 import Landing from "./component/pages/landing/Landing";

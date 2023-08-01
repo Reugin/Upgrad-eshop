@@ -43,7 +43,7 @@ const ProductPage = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <div className="main-container">
+            <div className="product-card-main-container-">
                 <Container className='product-card-container'>
                     {/* Show category tabs only if categories are available */}
                     {categories.length > 0 && (

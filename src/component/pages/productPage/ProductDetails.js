@@ -4,11 +4,16 @@ import { Container, Typography, TextField, Button, Card, CardContent, CardMedia,
 import { CallBackendAPI } from '../../library/app';
 import './ProductDetails.css'; // Import the CSS file
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../menuBar/Navbar'
+import '../menuBar/Navbar.css';
+import { Box } from '@mui/material';
+
+
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#fff"
+            main: "#000"
         },
         secondary: {
             main: "#ff5722"
@@ -50,14 +55,21 @@ const ProductDetails = () => {
     }
 
     return (
+        <>
+        <Navbar/>
         <ThemeProvider theme={theme}>
-            <Container maxWidth="md" className="main-container">
-                <Grid container spacing={2}>
+          
+            <Container maxWidth="md" className="main-container"
+            sx={{
+             
+
+            }}>
+                <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>
                         <Card>
                             <CardMedia
                                 component="img"
-                                height="400"
+                                // height="400"
                                 image={product.imageURL}
                                 alt={product.name}
                                 className="product-image"
@@ -83,6 +95,12 @@ const ProductDetails = () => {
                         <Typography variant="body2" gutterBottom className="product-available-items">
                             Available Items: {product.availableItems}
                         </Typography>
+                        <Box sx={{
+                            display:'flex',
+                            alignItems:'center',
+                            justifyContent:'space-around',
+                            width:'100%',
+                        }}>
                         <TextField
                             label="Quantity"
                             type="number"
@@ -94,14 +112,18 @@ const ProductDetails = () => {
                             variant="outlined"
                             margin="normal"
                             className="quantity-input"
+                            size='small'
+                          
                         />
                         <Button variant="contained" color="secondary" onClick={handleBuyClick} className="buy-button">
                             Place Order
                         </Button>
+                        </Box>
                     </Grid>
                 </Grid>
             </Container>
         </ThemeProvider>
+        </>
     );
 };
 

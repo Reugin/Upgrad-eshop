@@ -59,7 +59,7 @@ const ProductPage = () => {
                 queryParams = `?${params.toString()}`;
             }
 
-            const productsData = await CallBackendAPI('GET', `/products?${queryParams}`, null);
+            const productsData = await CallBackendAPI('GET', `/products${queryParams}`, null);
             setProducts(productsData);
         }catch (e) {
             console.error('Error fetching data:', e);

@@ -18,7 +18,7 @@ const theme = createTheme({
 
 const CreateOrder = () => {
     const location = useLocation();
-    const { product, quantity, address } = location.state;
+    const { product, quantity, addressList } = location.state;
     const [activeStep, setActiveStep] = useState(0);
 
     const handleNextStep = () => {
@@ -35,7 +35,7 @@ const CreateOrder = () => {
             const orderDetails = {
                 product,
                 quantity,
-                address,
+                addressList,
                 // Include any other necessary order details here
             };
 
@@ -58,7 +58,7 @@ const CreateOrder = () => {
     };
 
                 //Get address from backend
- 
+
 
 
     const steps = ['Address', 'Confirm Order'];
@@ -96,31 +96,11 @@ const CreateOrder = () => {
                                         Shipping Address
                                     </Typography>
                                 </Grid>
-
-                                <Grid item xs={12} sm={6}>
-                                    <TextField
-                                        label="Full Name"
-                                        variant="outlined"
-                                        fullWidth
-                                        size='small'
-                                        value={address?.fullName}
-                                        disabled
-                                    />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <TextField
-                                        label="Phone Number"
-                                        variant="outlined"
-                                        size='small'
-                                        fullWidth
-                                        value={address?.phoneNumber}
-                                        disabled
-                                    />
-                                </Grid>
                                 <Grid item xs={12}>
                                     <TextField
                                         fullWidth
                                         label='Flat, House no., Building, Company, Apartment'
+                                        type='text'
                                         size='small'>
                                     </TextField>
                                 </Grid>
@@ -150,16 +130,16 @@ const CreateOrder = () => {
                                     </TextField>
                                 </Grid>
 
-                                <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'space-between', marginBlock: '10px', }}>
-                                    <Button
-                                        onClick={handlePreviousStep}
-                                        className="previous-step-button"
-                                        sx={{
-                                            border: '1px solid black'
-                                        }}>
+                                <Grid item xs={12} sx={{display:'flex' ,justifyContent:'space-between', marginBlock:'10px',}}>
+                                <Button 
+                                    onClick={handlePreviousStep} 
+                                    className="previous-step-button"
+                                    sx={{
+                                        border:'1px solid black'
+                                    }}>
                                         Back
                                     </Button>
-
+                                    
                                     <Button
                                         color="secondary"
                                         onClick={handleConfirmOrder}
@@ -169,7 +149,7 @@ const CreateOrder = () => {
                                         }}>
                                         Confirm Order
                                     </Button>
-
+                                    
                                 </Grid>
                             </Grid>
                         </Container>

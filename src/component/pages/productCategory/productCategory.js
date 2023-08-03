@@ -22,8 +22,17 @@ function ProductCategory({ callback }) {
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
-        // Call the callback function with the selected category
-        // callback(newAlignment);
+        let dir = event.target.value
+        if (dir == 'high'){
+            callback('price', 1)
+        }else if(dir == 'low'){
+            callback('price', -1)
+        }else if(dir == 'new'){
+            callback('createdAt', -1)
+        }else{
+            callback('_id', -1)
+        }
+
     };
 
     return (
@@ -43,10 +52,10 @@ function ProductCategory({ callback }) {
                     borderBottom: "1px solid #b0b0b0"
                 }}
             >
-                <ToggleButton value="Default">Default</ToggleButton>
-                <ToggleButton value="Price High to Low">Price High to Low</ToggleButton>
-                <ToggleButton value="Price Low to High">Price Low to High</ToggleButton>
-                <ToggleButton value="Newest">Newest</ToggleButton>
+                <ToggleButton value="default">Default</ToggleButton>
+                <ToggleButton value="low">Price High to Low</ToggleButton>
+                <ToggleButton value="high">Price Low to High</ToggleButton>
+                <ToggleButton value="new">Newest</ToggleButton>
             </ToggleButtonGroup>
         </ThemeProvider>
     );

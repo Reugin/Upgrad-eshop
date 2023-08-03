@@ -1,12 +1,13 @@
 // api.js
 const BASE_URL = 'http://localhost:3001/api/v1'; // Replace this with your backend API URL
 
-export const CallBackendAPI = async (methodType, url, requestBody) => {
+export const CallBackendAPI = async (methodType, url, requestBody, token = "") => {
     try {
         const requestOptions = {
             method: methodType,
             headers: {
                 'Content-Type': 'application/json',
+                'x-auth-token':token
             },
         };
 
@@ -22,11 +23,14 @@ export const CallBackendAPI = async (methodType, url, requestBody) => {
         }
 
         if (response.status === 204) {
-            // For successful DELETE requests (status code 204), return an empty response
             return {};
         }
 
         const responseData = await response.json();
+        const authToken = response.headers.get('X-Auth-Token');
+        if (authToken) {
+            localStorage.setItem('authToken', authToken);
+        }
         return responseData;
     } catch (error) {
         console.error('Error communicating with the backend:', error.message);

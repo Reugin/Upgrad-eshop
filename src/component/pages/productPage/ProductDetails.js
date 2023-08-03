@@ -25,15 +25,31 @@ const ProductDetails = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
+    const [addressList, setAddressList] = useState([]);
 
     useEffect(() => {
-        fetchProductDetails();
+        fetchProductDetails().then();
+        fetchAddressDetails().then()
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+            navigate('/signIn');
+        }
     }, []);
+
 
     const fetchProductDetails = async () => {
         try {
-            const productDetails = await CallBackendAPI('GET', `/products/${productId}`, null);
+            const productDetails = await CallBackendAPI('GET', `/products/${productId}`, null, );
             setProduct(productDetails);
+        } catch (error) {
+            console.error('Error fetching product details:', error);
+        }
+    };
+
+    const fetchAddressDetails = async () => {
+        try {
+            const addressResp = await CallBackendAPI('GET', `/addresses`, null,  localStorage.getItem('authToken'));
+            setAddressList(addressResp);
         } catch (error) {
             console.error('Error fetching product details:', error);
         }
@@ -46,7 +62,7 @@ const ProductDetails = () => {
     const navigate = useNavigate();
 
     const handleBuyClick = () => {
-        navigate('/create-order', { state: { product, quantity } });
+        navigate('/create-order', { state: { product, quantity, addressList } });
 
     };
 
@@ -56,7 +72,7 @@ const ProductDetails = () => {
 
     return (
         <>
-        <Navbar/>
+            <Navbar />
         <ThemeProvider theme={theme}>
           
             <Container maxWidth="md" className="main-container"

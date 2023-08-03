@@ -57,7 +57,11 @@ const CreateOrder = () => {
         }
     };
 
-    const steps = ['Confirm Order'];
+                //Get address from backend
+ 
+
+
+    const steps = ['Address', 'Confirm Order'];
 
     return (
         <ThemeProvider theme={theme}>
@@ -117,7 +121,6 @@ const CreateOrder = () => {
                                     <TextField
                                         fullWidth
                                         label='Flat, House no., Building, Company, Apartment'
-                                        type='text'
                                         size='small'>
                                     </TextField>
                                 </Grid>
@@ -147,16 +150,16 @@ const CreateOrder = () => {
                                     </TextField>
                                 </Grid>
 
-                                <Grid item xs={12} sx={{display:'flex' ,justifyContent:'space-between', marginBlock:'10px',}}>
-                                <Button 
-                                    onClick={handlePreviousStep} 
-                                    className="previous-step-button"
-                                    sx={{
-                                        border:'1px solid black'
-                                    }}>
+                                <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'space-between', marginBlock: '10px', }}>
+                                    <Button
+                                        onClick={handlePreviousStep}
+                                        className="previous-step-button"
+                                        sx={{
+                                            border: '1px solid black'
+                                        }}>
                                         Back
                                     </Button>
-                                    
+
                                     <Button
                                         color="secondary"
                                         onClick={handleConfirmOrder}
@@ -166,7 +169,7 @@ const CreateOrder = () => {
                                         }}>
                                         Confirm Order
                                     </Button>
-                                    
+
                                 </Grid>
                             </Grid>
                         </Container>

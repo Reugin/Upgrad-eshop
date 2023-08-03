@@ -25,6 +25,9 @@ const ProductCard = ({ product }) => {
                 <Typography variant="h6" style={{ paddingBlock: 10, fontWeight: 600, display: 'flex' }}>
                     Product Name:<br></br> {product.name}
                 </Typography>
+                <Typography variant="p" style={{ paddingBlock: 10, fontWeight: 600, display: 'flex' }}>
+                    Price: {product.price}$
+                </Typography>
                 <Typography>Available Items: {product.availableItems}</Typography>
                 <CardActions sx={{ display: 'block' }}>
                     <Button fullWidth color='secondary' style={{ border: '1px solid #ff5722' }} onClick={handleAddToCart}>Buy Now</Button>

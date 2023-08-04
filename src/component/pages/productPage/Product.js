@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Grid, ToggleButton, ToggleButtonGroup, createTheme, ThemeProvider } from '@mui/material';
+import { Container, Grid, ToggleButton, ToggleButtonGroup, createTheme, ThemeProvider, Typography } from '@mui/material';
 import { CallBackendAPI } from "../../library/app";
 import ProductCard from "./ProductCard";
 import Navbar from "../menuBar/Navbar";
@@ -83,6 +83,8 @@ const ProductPage = () => {
                 <div className="product-card-main-container-">
                     <Container className='product-card-container'>
                         {/* Show category tabs only if categories are available */}
+                        <Grid container spacing={2}>
+                            <Grid item>
                         {categories.length > 0 && (
                             <ToggleButtonGroup
                                 value={selectedCategory}
@@ -98,6 +100,13 @@ const ProductPage = () => {
                                 ))}
                             </ToggleButtonGroup>
                         )}
+                        </Grid>
+                        <Grid item>
+                           <ToggleButtonGroup>
+                            <ToggleButton>Sort By</ToggleButton>
+                           </ToggleButtonGroup>
+                        </Grid>
+                        </Grid>
                         <Grid container spacing={4}>
                             {/* Loop through products and filter by selected category */}
                             {products

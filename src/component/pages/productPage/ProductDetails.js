@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Typography, TextField, Button, Card, CardContent, CardMedia, Grid, createTheme, ThemeProvider } from '@mui/material';
+import { Container, Typography, TextField, Button, Card, CardMedia, Grid, createTheme, ThemeProvider } from '@mui/material';
 import { CallBackendAPI } from '../../library/app';
 import './ProductDetails.css'; // Import the CSS file
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../menuBar/Navbar'
-import '../menuBar/Navbar.css';
 import { Box } from '@mui/material';
 
 

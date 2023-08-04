@@ -24,13 +24,13 @@ function ProductCategory({ callback }) {
         setAlignment(newAlignment);
         let dir = event.target.value
         if (dir == 'high'){
-            callback('price', 1)
+            callback('price', "asc")
         }else if(dir == 'low'){
-            callback('price', -1)
+            callback('price', "desc")
         }else if(dir == 'new'){
-            callback('createdAt', -1)
+            callback('createdAt', "desc")
         }else{
-            callback('_id', -1)
+            callback('_id', "desc")
         }
 
     };
